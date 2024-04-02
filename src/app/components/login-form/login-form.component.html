@@ -1,0 +1,63 @@
+<div class="container">
+  <div class="columns is-centered">
+    <div class="column is-5-tablet is-4-desktop is-3-widescreen">
+      <h1 class="title">Login Form</h1>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="field">
+          <div class="control has-icons-left has-icons-right">
+            <input
+              class="input"
+              type="email"
+              formControlName="email"
+              placeholder="Email"
+              autoComplete="email"
+              required
+              [class.is-success]="isEmailValid"
+            />
+            <span class="icon is-small is-left">
+              <i class="fas fa-envelope"></i>
+            </span>
+            <span class="icon is-small is-right" *ngIf="isEmailValid">
+              <i class="fas fa-check"></i>
+            </span>
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="control has-icons-left has-icons-right">
+            <input
+              class="input"
+              type="password"
+              formControlName="password"
+              placeholder="Password"
+              autoComplete="current-password"
+              required
+              [class.is-success]="isPasswordValid"
+            />
+            <span class="icon is-small is-left">
+              <i class="fas fa-lock"></i>
+            </span>
+
+            <span class="icon is-small is-right" *ngIf="isPasswordValid">
+              <i class="fas fa-check"></i>
+            </span>
+          </div>
+        </div>
+
+        <div class="field is-grouped-right">
+          <div class="control">
+            <button
+              class="button is-link"
+              type="submit"
+              [class.is-loading]="loading"
+            >
+              Login
+            </button>
+          </div>
+        </div>
+
+        <p class="help is-danger">{{ error }}</p>
+      </form>
+    </div>
+  </div>
+</div>

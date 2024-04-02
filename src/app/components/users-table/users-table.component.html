@@ -1,0 +1,34 @@
+<div class="section">
+  <div class="container">
+    <div class="is-flex is-justify-content-space-between">
+      <h1 class="title">Users Table</h1>
+      <div class="buttons" style="margin-bottom: 10px;">
+        <button class="button is-link" (click)="handleGoToDashboard()">
+          Go Back
+        </button>
+      </div>
+    </div>
+    <table class="table is-striped is-hoverable is-fullwidth">
+      <thead>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Date Of Birth</th>
+          <th>Education</th>
+          <th>Position</th>
+          <th>Role</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{ user.name }}</td>
+          <td>{{ user.lastName }}</td>
+          <td>{{ user.dateOfBirth }}</td>
+          <td>{{ user.education }}</td>
+          <td>{{ user.position }}</td>
+          <td>{{ user.role }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

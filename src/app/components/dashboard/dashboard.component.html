@@ -1,0 +1,38 @@
+<section class="section">
+  <div class="container">
+    <div class="is-flex is-justify-content-space-between">
+      <h1 class="title">Dashboard</h1>
+      <div class="buttons" style="margin-bottom: 10px;">
+        <button
+          *ngIf="userRole === 'Admin'"
+          class="button is-link"
+          (click)="goToViewUsers()"
+        >
+          View Users
+        </button>
+        <button class="button is-link" (click)="logout()">Logout</button>
+      </div>
+    </div>
+    <div class="columns is-multiline">
+      <div
+        *ngFor="let assessment of assessments"
+        class="column is-one-quarter"
+        (click)="goToAssessment(assessment.id)"
+        style="cursor: pointer"
+      >
+        <div class="card">
+          <div class="card-image">
+            <figure class="image is-4by3">
+              <img [src]="assessment.image_url" [alt]="assessment.name" />
+            </figure>
+          </div>
+          <div class="card-content">
+            <div class="content">
+              <p class="title is-4">{{ assessment.name }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

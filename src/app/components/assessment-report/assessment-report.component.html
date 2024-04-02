@@ -1,0 +1,21 @@
+<div class="section">
+  <div class="is-flex is-justify-content-space-between">
+    <h1 class="title">Assessment Report</h1>
+    <div class="buttons" style="margin-bottom: 10px;">
+      <button class="button is-link" (click)="goToDashboard()">Go Back</button>
+    </div>
+  </div>
+  <div *ngIf="loading" class="content">Loading...</div>
+  <div *ngIf="graphData" class="content">
+    <p>Graph Type: {{ graphData.type }}</p>
+    <ul>
+      <li *ngFor="let item of graphData.data | keyvalue">
+        <strong>{{ item.key }}:</strong> {{ item.value }}
+      </li>
+    </ul>
+  </div>
+  <div *ngIf="noData" class="has-text-danger">
+    There is no data available
+  </div>
+  <div *ngIf="error" class="content">Error: {{ error }}</div>
+</div>
