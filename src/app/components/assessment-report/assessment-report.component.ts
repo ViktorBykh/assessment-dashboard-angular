@@ -4,7 +4,6 @@ import { ApiService } from '../../services/api.service';
 import { GraphData } from '../../types/GraphData';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { BASE_URL } from '../../app.routes';
 
 @Component({
   selector: 'app-assessment-report',
@@ -50,6 +49,6 @@ export class AssessmentReportComponent implements OnInit {
   }
 
   goToDashboard(): void {
-    this.router.navigate([`${BASE_URL}/api/userassessments`]);
+    this.router.navigate(['/api/userassessments']);
   }
 }

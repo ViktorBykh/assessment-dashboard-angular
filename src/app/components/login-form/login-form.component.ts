@@ -8,7 +8,6 @@ import {
 import { Router } from '@angular/router';
 import { ApiService } from '../../services/api.service';
 import { CommonModule } from '@angular/common';
-import { BASE_URL } from '../../app.routes';
 
 @Component({
   selector: 'app-login-form',
@@ -53,7 +52,7 @@ export class LoginFormComponent {
         const role = response.role;
         localStorage.setItem('token', token);
         localStorage.setItem('role', role);
-        this.router.navigate([`${BASE_URL}/api/userassessments`]);
+        this.router.navigate(['/api/userassessments']);
       })
       .catch(() => (this.error = 'Invalid email or password'))
       .finally(() => (this.loading = false));

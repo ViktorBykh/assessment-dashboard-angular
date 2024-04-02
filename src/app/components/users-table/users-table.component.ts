@@ -4,7 +4,6 @@ import { ApiService } from '../../services/api.service';
 import { Router } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { BASE_URL } from '../../app.routes';
 
 @Component({
   selector: 'app-users-table',
@@ -30,6 +29,6 @@ export class UsersTableComponent implements OnInit {
   }
 
   handleGoToDashboard(): void {
-    this.router.navigate([`${BASE_URL}/api/userassessments`]);
+    this.router.navigate(['/api/userassessments']);
   }
 }

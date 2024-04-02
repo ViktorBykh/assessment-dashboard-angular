@@ -4,7 +4,6 @@ import { ApiService } from '../../services/api.service';
 import { Assessment } from '../../types/Assessment';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
-import { BASE_URL } from '../../app.routes';
 
 @Component({
   selector: 'app-dashboard',
@@ -35,15 +34,15 @@ export class DashboardComponent implements OnInit {
   }
 
   goToAssessment(assessmentId: number): void {
-    this.router.navigate([`${BASE_URL}/api/userassessments/graph/`, assessmentId]);
+    this.router.navigate(['/api/userassessments/graph', assessmentId]);
   }
 
   goToViewUsers(): void {
-    this.router.navigate([`${BASE_URL}/api/users`]);
+    this.router.navigate(['/api/users']);
   }
 
   logout(): void {
     localStorage.clear();
-    this.router.navigate([`${BASE_URL}/api/login`]);
+    this.router.navigate(['/api/login']);
   }
 }
